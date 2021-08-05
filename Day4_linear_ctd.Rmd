@@ -38,7 +38,7 @@ leslie_bug
 
 # set initial condition, with iterations
 # pop_t0 = c(0, 0, 420)
-pop_t0 = c(6000, 800, 200)
+ pop_t0 = c(6000, 800, 200)
 # pop_t0 = c(25, 9, 2)
 
 pop_t1 = leslie_bug %*% pop_t0
@@ -53,7 +53,6 @@ pop_t3
 pop_t4 = leslie_bug %*% pop_t3
 pop_t4
 ```
-
 
 
 

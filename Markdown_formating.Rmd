@@ -1,0 +1,59 @@
+---
+title: "Rmd formating doc"
+subtitle: "Gettin' all purty"
+author: "Shale"
+date: "8/5/2021"
+output: 
+  html_document:
+    theme: sandstone
+    toc: TRUE
+    toc_float: TRUE
+    toc_collapsed: FALSE
+    number_sections: TRUE
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+R Markdown Formatting intro
+
+### First section
+
+Words and words about `code` : so pretty!
+
+#### Code formating example
+
+```{r}
+a = 10
+alp = a ^2
+alp
+```
+
+#### Yet Another Coding Linguist
+
+```{r}
+# Just comments here
+```
+
+
+### Second section
+
+Description of this stuff
+Check out my $equation = x(4)^z$
+
+#### Another code chunk
+
+```{r}
+pill = c(4, 3, 2, 6, 4, 3, 6)
+ding = pill * 11
+ding
+```
+
+#### Final code example
+
+```{r}
+# Lets do some math
+```
+

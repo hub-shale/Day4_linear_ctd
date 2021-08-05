@@ -1,0 +1,59 @@
+---
+title: "Day4_linear_ctd"
+author: "Shale"
+date: "8/5/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+### Matrices in R
+
+```{r}
+# matrix() wraps a series of values (aka a vector) into a matrix.
+# nrow =  : specify number of rows
+# ncol =  : specify number of columns
+# byrow = TRUE : populates matrix by rows instead of columns (default)
+
+cats = c(1, 3, 12, 2)
+cat_mx = matrix(data = cats, nrow = 2, ncol = 2, byrow = TRUE)
+
+dog_mx = matrix(c(2, 34, 2, 1), nrow = 2, ncol = 2, byrow = TRUE)
+
+# matrix multiplication is done using the dot product (%*%) operator
+interaction_mx = cat_mx %*% dog_mx
+interaction_mx
+```
+
+
+### Leslie Matrix
+
+```{r}
+leslie_bug = matrix(c(0, 0, 600, 0.2, 0, 0, 0, 0.08, 0), nrow = 3, ncol = 3, byrow = TRUE)
+leslie_bug
+
+# set initial condition, with iterations
+# pop_t0 = c(0, 0, 420)
+pop_t0 = c(6000, 800, 200)
+# pop_t0 = c(25, 9, 2)
+
+pop_t1 = leslie_bug %*% pop_t0
+pop_t1
+
+pop_t2 = leslie_bug %*% pop_t1
+pop_t2
+
+pop_t3 = leslie_bug %*% pop_t2
+pop_t3
+
+pop_t4 = leslie_bug %*% pop_t3
+pop_t4
+```
+
+
+
+

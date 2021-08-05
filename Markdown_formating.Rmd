@@ -19,11 +19,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 R Markdown Formatting intro
 
-### First section
+# First section
 
 Words and words about `code` : so pretty!
 
-#### Code formating example
+## Code formating example
 
 ```{r}
 a = 10
@@ -31,19 +31,19 @@ alp = a ^2
 alp
 ```
 
-#### Yet Another Coding Linguist
+## Yet Another Coding Linguist
 
 ```{r}
 # Just comments here
 ```
 
 
-### Second section
+# Second section
 
 Description of this stuff
 Check out my $equation = x(4)^z$
 
-#### Another code chunk
+## Another code chunk
 
 ```{r}
 pill = c(4, 3, 2, 6, 4, 3, 6)
@@ -51,7 +51,7 @@ ding = pill * 11
 ding
 ```
 
-#### Final code example
+## Final code example
 
 ```{r}
 # Lets do some math

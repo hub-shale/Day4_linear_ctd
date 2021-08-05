@@ -1,0 +1,78 @@
+---
+title: "Day4_stats"
+author: "Shale"
+date: "8/5/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(GGally)
+library(skimr)
+library(palmerpenguins)
+```
+
+## R Markdown
+
+### Statistics stuff / summary data exploration
+
+```{r}
+# show names of all variables
+names(penguins)
+
+# dim(penguins) shows dimensions of the data frame
+
+# general summary of all data
+summary(penguins)
+# class(penguins$year) finds the data class of column "year" in penguins (here its integer)
+
+# first 6 (default, but can put , # after dataframe to change quantity) lines use head(), last lines use tail()
+
+```
+
+
+
+## `GGally::ggpairs()`  and `skimr::skim()`
+SO MANY FUN PLOTS, **broad** summary stats
+
+```{r}
+GGally::ggpairs(penguins)
+```
+
+
+```{r}
+# skimr::skim()
+skim(penguins)
+```
+
+
+```{r}
+# histogram and boxplot of an individual variable
+ggplot(data = penguins, aes(flipper_length_mm)) +
+  geom_histogram()
+
+# using a boxplot here MISSES the fact that the data is bimodal based on species (see histogram)
+ggplot(data = penguins, aes(flipper_length_mm)) +
+  geom_boxplot() 
+```
+```{r}
+# facet_wrap(~species) splits data out by species, to avoid the boxplot problem mentioned above
+ggplot(data = penguins, aes(flipper_length_mm)) +
+  geom_boxplot() +
+  facet_wrap(~species)
+
+ggplot(data = penguins, aes(flipper_length_mm)) +
+  geom_histogram() +
+  facet_wrap(~species)
+```
+
+### practice one
+
+Just for fun, species is obviously left out here which is weird
+
+```{r}
+ggplot(data = penguins, aes(bill_length_mm)) +
+  geom_histogram() +
+  facet_wrap(~island)
+```
+
